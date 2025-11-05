@@ -40,7 +40,7 @@ dirLight.shadow.camera.near = 0.5;
 dirLight.shadow.camera.far = 50;
 scene.add(dirLight);
 
-// Optional soft ground light for more visibility
+// Subtle warm spotlight for better tone
 const spotLight = new THREE.SpotLight(0xffcc88, 1.5, 50, Math.PI / 6, 0.3);
 spotLight.position.set(0, 5, 5);
 spotLight.castShadow = true;
@@ -57,9 +57,12 @@ controls.enableDamping = true;
 const loader = new GLTFLoader();
 let tigerMixer = null;
 
+// ✅ IMPORTANT: Use absolute paths for public folder assets
+// (Ensure both folders are inside your project's /public directory)
+
 // === Load ROAD MODEL ===
 loader.load(
-  './road_with_substance_designer/scene.gltf',
+  '/road_with_substance_designer/scene.gltf', // path from /public
   (gltf) => {
     const road = gltf.scene;
     road.scale.set(3, 3, 3);
@@ -86,7 +89,7 @@ loader.load(
 
 // === Load TIGER MODEL ===
 loader.load(
-  './running_tiger/scene.gltf',
+  '/running_tiger/scene.gltf', // path from /public
   (gltf) => {
     const tiger = gltf.scene;
     tiger.scale.set(0.015, 0.015, 0.015);
