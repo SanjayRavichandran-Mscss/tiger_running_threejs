@@ -59,7 +59,7 @@ let tigerMixer = null;
 
 // === Load ROAD MODEL ===
 loader.load(
-  '/road_with_substance_designer/scene.gltf', // path from /public
+  '/road_with_substance_designer/scene.gltf', // Absolute path from /public
   (gltf) => {
     const road = gltf.scene;
     road.scale.set(3, 3, 3);
@@ -86,7 +86,7 @@ loader.load(
 
 // === Load TIGER MODEL ===
 loader.load(
-  '/running_tiger/scene.gltf', // path from /public
+  '/running_tiger/scene.gltf', // Absolute path from /public
   (gltf) => {
     const tiger = gltf.scene;
     tiger.scale.set(0.015, 0.015, 0.015);
