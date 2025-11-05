@@ -57,9 +57,6 @@ controls.enableDamping = true;
 const loader = new GLTFLoader();
 let tigerMixer = null;
 
-// ✅ IMPORTANT: Use absolute paths for public folder assets
-// (Ensure both folders are inside your project's /public directory)
-
 // === Load ROAD MODEL ===
 loader.load(
   '/road_with_substance_designer/scene.gltf', // path from /public
